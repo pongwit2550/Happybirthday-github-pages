@@ -1,0 +1,192 @@
+body {
+    background: linear-gradient(135deg, #ffe6f2 0%, #ffd6ec 100%);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #fff0fa;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(255, 182, 193, 0.25), 0 1.5px 0 #fff0fa;
+    text-align: center;
+    padding: 48px 24px 36px 24px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #e75480;
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 16px #ffd1ea, 0 1.5px 0 #fff0fa;
+}
+
+.elice {
+    color: #ff69b4;
+    font-weight: bold;
+    text-shadow: 0 2px 8px #ffd1ea;
+}
+
+.subtitle {
+    color: #b85c9e;
+    font-size: 1.3rem;
+    margin-bottom: 36px;
+    text-shadow: 0 2px 8px #ffd1ea;
+}
+
+.cake {
+    font-size: 4rem;
+    margin-top: 16px;
+    animation: bounce 1.2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-18px); }
+}
+
+.balloons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.balloon {
+    width: 48px;
+    height: 64px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: relative;
+    box-shadow: 0 8px 24px #ffb6c1a0;
+    animation: float 2.5s ease-in-out infinite alternate;
+}
+.balloon.pink { background: #ffb6d5; border: 2px solid #ff69b4; }
+.balloon.purple { background: #e0b3ff; border: 2px solid #b85c9e; }
+.balloon.white { background: #fff; border: 2px solid #ffd1ea; }
+.balloon::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -18px;
+    width: 2px;
+    height: 22px;
+    background: #e75480;
+    transform: translateX(-50%);
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-18px) scale(1.05); }
+}
+
+.cake-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 32px 0 12px 0;
+}
+.cake-body {
+    position: relative;
+    width: 90px;
+    height: 110px;
+    z-index: 2;
+}
+.cake-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 30px;
+    background: #fff0fa;
+    border-radius: 45px 45px 30px 30px / 30px 30px 20px 20px;
+    border: 2px solid #ffb6d5;
+    box-shadow: 0 2px 8px #ffd1ea;
+}
+.cake-middle {
+    position: absolute;
+    top: 28px;
+    left: 8px;
+    width: 74px;
+    height: 32px;
+    background: #ffb6d5;
+    border-radius: 36px 36px 24px 24px / 24px 24px 16px 16px;
+    border: 2px solid #ff69b4;
+}
+.cake-bottom {
+    position: absolute;
+    top: 58px;
+    left: 16px;
+    width: 58px;
+    height: 32px;
+    background: #ffd1ea;
+    border-radius: 29px 29px 16px 16px / 16px 16px 12px 12px;
+    border: 2px solid #e75480;
+}
+.candle {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    width: 10px;
+    height: 24px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1.5px solid #ff69b4;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.flame {
+    width: 10px;
+    height: 16px;
+    background: radial-gradient(ellipse at center, #ffe066 60%, #ffb347 100%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    margin-top: -10px;
+    animation: flame-flicker 0.7s infinite alternate;
+    box-shadow: 0 0 16px 4px #ffe06699;
+}
+@keyframes flame-flicker {
+    0% { transform: scaleY(1) scaleX(1); }
+    100% { transform: scaleY(1.2) scaleX(0.9) rotate(-6deg); }
+}
+.cake-shadow {
+    width: 60px;
+    height: 12px;
+    background: #ffd1ea;
+    border-radius: 50%;
+    margin: 0 auto;
+    filter: blur(2px);
+    opacity: 0.5;
+    margin-top: 100px;
+    z-index: 1;
+}
+
+.sparkle {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+    z-index: 10;
+}
+.sparkle span {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff6fb;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: sparkle 1.2s linear infinite;
+}
+@keyframes sparkle {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.4); }
+    100% { opacity: 0.8; transform: scale(1); }
+}
